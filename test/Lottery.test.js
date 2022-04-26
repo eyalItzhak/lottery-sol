@@ -92,6 +92,6 @@ describe("Lottery Contract", () => {
     const finalBalance = await web3.eth.getBalance(accounts[0]);
     const difference = finalBalance - initialBalance;
 
-    assert(difference > web3.utils.toWei("1.8", "ether"));
+    assert(difference > web3.utils.toWei("1.8", "ether")); //1.8 because "gas"
   });
 });
