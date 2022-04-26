@@ -3,11 +3,10 @@ const Web3 = require("web3");
 const { interface, bytecode } = require("./compile");
 
 const provider = new HDWalletProvider(
-  "REPLACE_WITH_YOUR_MNEMONIC",
-  // remember to change this to your own phrase!
-  "https://mainnet.infura.io/v3/dc652a5224e2444ab7fc29fe16934889"
-  // remember to change this to your own endpoint!
+  "then case hidden turtle amateur purity alpha rain run poem spike tone",
+  "https://rinkeby.infura.io/v3/dc652a5224e2444ab7fc29fe16934889"
 );
+
 const web3 = new Web3(provider);
 
 const deploy = async () => {
@@ -19,7 +18,11 @@ const deploy = async () => {
     .deploy({ data: bytecode })
     .send({ gas: "1000000", from: accounts[0] });
 
-  console.log("Contract deployed to", result.options.address);
+  console.log("*********deployed interface*************")
+  console.log(interface);
+  console.log("*********deployed address*************")
+
+  console.log("Contract deployed to", result.options.address); //return the address of rhe contract
   provider.engine.stop();
 };
 deploy();
